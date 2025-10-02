@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: raw_data
+    description: "Base de données source brute"
+    schema: AIRBYTE_SCHEMA_AUDI 
+    database: AIRBYTE_DATABASE_AUDI  
+    tables:
+      - name: raw_customers
+        description: "Table des clients brutes"
+        
+      - name: raw_orders
+        description: "Table des commandes brutes"
+        
+      - name: raw_products
+        description: "Table des produits brutes"
