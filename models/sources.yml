@@ -5,5 +5,10 @@ sources:
     database: AIRBYTE_DATABASE_AUDI    
     schema: EPEGAFIDECONSULT_DB                 
     tables:
-      - name: vtiger_ventescf 
+      - name: vtiger_ventescf
+      - name: vtiger_visitescf
+      - name: vtiger_succursalescf
+      - name: vtiger_accessoirescf
+      - name: vtiger_objectifsuccursalecf 
+      - name: vtiger_salesordercf
       - name: vtiger_field

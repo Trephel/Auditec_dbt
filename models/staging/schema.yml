@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: stg_vtiger_visitescf
+    description: "Table de staging des visites"
+    columns:
+      - name: visitesid
+        tests: [not_null, unique]
+
+  - name: stg_vtiger_succursalescf
+    description: "Table de staging des succursales"
+    columns:
+      - name: succursaleid
+        tests: [not_null, unique]
+
+  - name: stg_vtiger_accessoirescf
+    description: "Table de staging des accessoires"
+    columns:
+      - name: accessoireid
+        tests: [not_null, unique]
+
+  - name: stg_vtiger_objectifsuccursalecf
+    description: "Table de staging des objectifs succursales"
+    columns:
+      - name: objectifsuccursaleid
+        tests: [not_null, unique]
+
+  - name: stg_vtiger_salesordercf
+    description: "Table de staging des bons de commande"
+    columns:
+      - name: salesorderid
+        tests: [not_null, unique]

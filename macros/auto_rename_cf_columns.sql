@@ -25,8 +25,12 @@
             | replace("ê", "e")
             | replace("à", "a")
             | replace("ç", "c")
-           
       -%}
+
+      {# ✅ Vérification des doublons : si déjà présent, on ajoute un suffixe basé sur loop.index #}
+      {%- if clean_label in clean_names -%}
+        {%- set clean_label = clean_label ~ "_" ~ loop.index -%}
+      {%- endif -%}
 
       {%- do clean_names.append(clean_label) -%}
     {%- endif -%}
@@ -35,7 +39,7 @@
   select
       {{ id_column }}
       {%- for col, clean in zip(cf_columns, clean_names) %}
-        , {{ col }} as {{ clean }}
+        , {{ col }} as "{{ clean }}"
       {%- endfor %}
   from {{ source(source_name, table_name) }}
 {% endmacro %}
