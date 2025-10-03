@@ -12,3 +12,4 @@ sources:
       - name: vtiger_objectifsuccursalecf 
       - name: vtiger_salesordercf
       - name: vtiger_field
+      - name: vtiger_accountscf

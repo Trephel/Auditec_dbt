@@ -30,3 +30,9 @@ models:
     columns:
       - name: salesorderid
         tests: [not_null, unique]
+
+  - name: stg_vtiger_accountscf
+    description: "Table de staging des comptes"
+    columns:
+      - name: accountid
+        tests: [not_null, unique]
