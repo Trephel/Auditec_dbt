@@ -14,3 +14,4 @@ sources:
       - name: vtiger_field
       - name: vtiger_accountscf
       - name: vtiger_objectifvmcf
+      - name: vtiger_account

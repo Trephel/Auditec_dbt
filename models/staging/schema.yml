@@ -42,3 +42,9 @@ models:
     columns:
       - name: objectifvmcf
         tests: [not_null, unique]
+
+  - name: stg_vtiger_account
+    description: "Table 2 de staging des comptes"
+    columns:
+      - name: accountid
+        tests: [not_null, unique]
