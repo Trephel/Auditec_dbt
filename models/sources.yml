@@ -13,3 +13,4 @@ sources:
       - name: vtiger_salesordercf
       - name: vtiger_field
       - name: vtiger_accountscf
+      - name: vtiger_objectifvmcf

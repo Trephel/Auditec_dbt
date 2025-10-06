@@ -36,3 +36,9 @@ models:
     columns:
       - name: accountid
         tests: [not_null, unique]
+  
+  - name: stg_vtiger_objectifvmcf
+    description: "Table de staging des objectifs"
+    columns:
+      - name: objectifvmcf
+        tests: [not_null, unique]
