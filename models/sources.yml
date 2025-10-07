@@ -15,3 +15,9 @@ sources:
       - name: vtiger_accountscf
       - name: vtiger_objectifvmcf
       - name: vtiger_account
+      - name: vtiger_cf_2801
+      - name: vtiger_cf_1977
+      - name: vtiger_cf_1361
+      - name: vtiger_cf_2777
+      - name: vtiger_cf_2647
+      - name: vtiger_cf_1823
