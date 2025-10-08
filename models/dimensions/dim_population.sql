@@ -68,4 +68,4 @@ final AS (
 
 -- 7️⃣ Résultat final
 SELECT *
-FROM final;
+FROM final
