@@ -6,8 +6,8 @@
 
 WITH source_statuts AS (
     SELECT
-        cf_1361id AS region_id,                
-        cf_1361 AS nom_region,               
+        cf_1361id AS statut_id,                
+        cf_1361 AS nom_statut,               
         color AS code_color,             
         presence AS presence, 
         sortorderid AS sortorderid,              

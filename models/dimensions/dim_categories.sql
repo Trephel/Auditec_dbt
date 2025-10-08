@@ -6,8 +6,8 @@
 
 WITH source_categorie AS (
     SELECT
-        cf_1823id AS region_id,                
-        cf_1823 AS nom_region,               
+        cf_1823id AS categorie_id,                
+        cf_1823 AS nom_categorie,               
         color AS code_color,             
         presence AS presence, 
         sortorderid AS sortorderid,              

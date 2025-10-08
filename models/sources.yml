@@ -20,4 +20,7 @@ sources:
       - name: vtiger_cf_1361
       - name: vtiger_cf_2777
       - name: vtiger_cf_2647
-      - name: vtiger_cf_1823
+      - name: vtiger_cf_1823  
+      - name: vtiger_objectifaudiocf  
+      - name: vtiger_objectifcrccf
+      - name: vtiger_objectifvmcf

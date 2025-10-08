@@ -6,8 +6,8 @@
 
 WITH source_reseau AS (
     SELECT
-        cf_2777id AS region_id,                
-        cf_2777 AS nom_region,               
+        cf_2777id AS reseau_id,                
+        cf_2777 AS nom_reseau,               
         color AS code_color,             
         presence AS presence, 
         sortorderid AS sortorderid,              

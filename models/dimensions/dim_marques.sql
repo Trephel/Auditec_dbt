@@ -6,8 +6,8 @@
 
 WITH source_marque AS (
     SELECT
-        cf_2647id AS region_id,                
-        cf_2647 AS nom_region,               
+        cf_2647id AS marque_id,                
+        cf_2647 AS nom_marque,               
         color AS code_color,             
         presence AS presence, 
         sortorderid AS sortorderid,              
