@@ -49,34 +49,5 @@ models:
       - name: accountid
         tests: [not_null, unique]
 
-  - name: stg_vtiger_cf_2801
-    description: "Table de staging du canal"
-    columns:
-      - name: cf_2801id
-        tests: [not_null, unique]
-
-  - name: stg_vtiger_cf_1977
-    description: "Table de staging du region"
-    columns:
-      - name: cf_1977id
-        tests: [not_null, unique]
-
-  - name: stg_vtiger_cf_1361
-    description: "Table de staging du statut"
-    columns:
-      - name: cf_1361id
-        tests: [not_null, unique]
-
-  - name: stg_vtiger_cf_2777
-    description: "Table de staging du reseau"
-    columns:
-      - name: cf_2777id
-        tests: [not_null, unique]
-
-  - name: stg_vtiger_cf_2647
-    description: "Table de staging du marque"
-    columns:
-      - name: cf_2647id
-        tests: [not_null, unique]
 
 
