@@ -20,7 +20,7 @@ WITH audio AS (
 -- 2️⃣ Table  AUDIO
 crc AS (
     SELECT
-        objectifaudioid AS pop_id,
+        CAST(objectifaudioid AS VARCHAR) AS pop_id,
         cf_1621 AS libelle,
         'Audio' AS type_population,
         cf_1569 AS annee,
@@ -33,7 +33,7 @@ crc AS (
 -- 3️⃣ Table VM
 vm AS (
     SELECT
-        objectifvmid AS pop_id,
+        CAST(objectifvmid AS VARCHAR) AS pop_id,
         cf_2196 AS libelle,
         'VM' AS type_population,
         cf_2200 AS annee,
