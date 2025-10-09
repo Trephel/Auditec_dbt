@@ -6,7 +6,7 @@
 
 WITH source_categorie AS (
     SELECT
-        cf_1823id AS categorie_id,                
+        CAST(cf_1823id AS VARCHAR) AS categorie_id,                
         cf_1823 AS nom_categorie,               
         color AS code_color,             
         presence AS presence, 

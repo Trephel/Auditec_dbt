@@ -7,7 +7,7 @@
 -- 1️⃣ Source de données brute
 WITH source_region AS (
     SELECT
-        cf_1977id AS region_id,                 
+        CAST(cf_1977id AS VARCHAR) AS region_id,                 
         cf_1977 AS nom_region,               
         color AS code_region,            
         presence AS presence, 

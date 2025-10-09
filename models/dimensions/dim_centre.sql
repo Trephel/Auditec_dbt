@@ -6,7 +6,7 @@
 
 WITH source_centre AS (
     SELECT
-        succursalesid AS succursales_id,                
+        CAST(succursalesid AS VARCHAR) AS succursales_id,                
         cf_2009 AS nom_succursales,               
         cf_2011 AS region_succursales,                           
         CURRENT_TIMESTAMP() AS date_integration,

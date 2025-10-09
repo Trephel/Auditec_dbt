@@ -6,7 +6,7 @@
 
 WITH source_canal_prescr AS (
     SELECT
-        cf_2801id AS canal_presc_id,                
+        CAST(cf_2801id AS VARCHAR) AS canal_presc_id,                
         cf_2801 AS nom_canal_presc,               
         color AS code_color,             
         presence AS presence, 

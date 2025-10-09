@@ -7,7 +7,7 @@
 -- 1️⃣ Source brute
 WITH source_statuts AS (
     SELECT
-        cf_1361id AS statut_id,                
+        CAST(cf_1361id AS VARCHAR) AS statut_id,                
         cf_1361 AS nom_statut,               
         color AS code_color,             
         presence AS presence, 

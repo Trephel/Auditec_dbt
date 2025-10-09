@@ -7,7 +7,7 @@
 -- 1️⃣ Source de données brute
 WITH source_reseau AS (
     SELECT
-        cf_2777id AS reseau_id,                
+        CAST(cf_2777id AS VARCHAR) AS reseau_id,                
         cf_2777 AS nom_reseau,               
         color AS code_color,             
         presence AS presence, 

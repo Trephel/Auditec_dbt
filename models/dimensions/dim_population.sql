@@ -7,7 +7,7 @@
 -- 1️⃣ Table  CRC
 WITH audio AS (
     SELECT
-        objectifcrcid AS pop_id,
+        CAST(objectifcrcid AS VARCHAR) AS pop_id,
         cf_2089 AS libelle,
         'CRC' AS type_population,
         cf_2089 AS annee,
