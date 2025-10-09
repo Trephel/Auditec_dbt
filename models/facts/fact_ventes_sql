@@ -16,11 +16,13 @@
         s.statut_id, 
         p.pop_id, 
         cat.categorie_id, 
-        pr.prescripteur_id, -- Mesures 
+        pr.prescripteur_id,  
         
         v."quantite" as quantite, 
         v."montant" as montant, 
-        v."perte" as perte, -- Dates 
+        v."perte" as perte,
+        v."nom_complet" as nom_complet, 
+        
         
         d_vente.date_id as date_vente_id, 
         d_livraison.date_id as date_livraison_id, 
