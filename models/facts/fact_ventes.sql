@@ -43,7 +43,7 @@ left join {{ ref('dim_regions') }} r
     on initcap(trim(v."region")) = initcap(trim(r.nom_region))
 
 left join {{ ref('dim_centre') }} ce
-    on initcap(trim(v."succursale")) = initcap(trim(ce.nom_succursale))
+    on initcap(trim(v."succursale")) = initcap(trim(ce.nom_succursales))
 
 left join {{ ref('dim_canal_presc') }} ca
     on initcap(trim(v."canal_de_prescription")) = initcap(trim(ca.nom_canal_presc))
@@ -61,19 +61,19 @@ left join {{ ref('dim_population') }} p
     on initcap(trim(v."pay_1")) = initcap(trim(p.nom_population))
 
 left join {{ ref('dim_categories') }} cat
-    on initcap(trim(v."categorie")) = initcap(trim(cat.nom_categorie))
+    on initcap(trim(v."categorie_medecin")) = initcap(trim(cat.nom_categorie))
 
 left join {{ ref('dim_prescripteur') }} pr
-    on initcap(trim(v."prescripteur")) = initcap(trim(pr.nom_prescripteur))
+    on initcap(trim(v."cr_par")) = initcap(trim(pr.nom_prescripteur))
 
 -- DATES
 left join {{ ref('dim_periode') }} d_vente
-    on to_date(v."date_vente") = d_vente.date_complete
+    on to_date(v."date_vente") = d_vente.date_id
 
 left join {{ ref('dim_periode') }} d_livraison
-    on to_date(v."date_livraison") = d_livraison.date_complete
+    on to_date(v."date_livraison") = d_livraison.date_id
 
 left join {{ ref('dim_periode') }} d_confirmation
-    on to_date(v."date_confirmation") = d_confirmation.date_complete
+    on to_date(v."date_confirmation") = d_confirmation.date_id
 
 where v.ventesid is not null
