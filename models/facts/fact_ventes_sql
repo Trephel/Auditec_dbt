@@ -5,7 +5,7 @@
     
     with ventes_stg as ( 
         
-        select * from {{ ref('stg_vtiger_ventescf') }} ) 
+        select * from {{ ref('stg_vtiger_ventescf2') }} ) 
         
         select v.ventesid as vente_id, -- Clés des dimensions 
         r.region_id, 
