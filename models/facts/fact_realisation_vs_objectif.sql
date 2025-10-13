@@ -21,111 +21,83 @@ WITH ventes AS (
         d_vente.annee, d_vente.mois
 ),
 
--- 2️⃣ OBJECTIFS : unpivot des mois pour créer une ligne par mois
+-- 2️⃣ OBJECTIFS : unpivot des mois
 objectifs_unpivot AS (
-    SELECT
-        r.region_id,
-        c.succursales_id AS centre_id,
-        o."annee",
-        '01' AS mois, o."janvier_ca" AS objectif_montant,
-        o."janvier_vo" AS objectif_quantite
+    SELECT r.region_id, c.succursales_id AS centre_id, o."annee", '01' AS mois, o."janvier_ca" AS objectif_montant, o."janvier_vo" AS objectif_quantite
     FROM {{ ref('stg_vtiger_objectifsuccursalecf') }} o
-    LEFT JOIN {{ ref('dim_regions') }} r 
-        ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
-    LEFT JOIN {{ ref('dim_centre') }} c 
-        ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
+    LEFT JOIN {{ ref('dim_regions') }} r ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
+    LEFT JOIN {{ ref('dim_centre') }} c ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
 
     UNION ALL SELECT r.region_id, c.succursales_id, o."annee", '02', o."fevrier_ca", o."fevrier_vo"
     FROM {{ ref('stg_vtiger_objectifsuccursalecf') }} o
-    LEFT JOIN {{ ref('dim_regions') }} r 
-        ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
-    LEFT JOIN {{ ref('dim_centre') }} c 
-        ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
+    LEFT JOIN {{ ref('dim_regions') }} r ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
+    LEFT JOIN {{ ref('dim_centre') }} c ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
 
     UNION ALL SELECT r.region_id, c.succursales_id, o."annee", '03', o."mars_ca", o."mars_vo"
     FROM {{ ref('stg_vtiger_objectifsuccursalecf') }} o
-    LEFT JOIN {{ ref('dim_regions') }} r 
-        ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
-    LEFT JOIN {{ ref('dim_centre') }} c 
-        ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
+    LEFT JOIN {{ ref('dim_regions') }} r ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
+    LEFT JOIN {{ ref('dim_centre') }} c ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
 
     UNION ALL SELECT r.region_id, c.succursales_id, o."annee", '04', o."avril_ca", o."avril_vo"
     FROM {{ ref('stg_vtiger_objectifsuccursalecf') }} o
-    LEFT JOIN {{ ref('dim_regions') }} r 
-        ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
-    LEFT JOIN {{ ref('dim_centre') }} c 
-        ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
+    LEFT JOIN {{ ref('dim_regions') }} r ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
+    LEFT JOIN {{ ref('dim_centre') }} c ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
 
     UNION ALL SELECT r.region_id, c.succursales_id, o."annee", '05', o."mai_ca", o."mai_vo"
     FROM {{ ref('stg_vtiger_objectifsuccursalecf') }} o
-    LEFT JOIN {{ ref('dim_regions') }} r 
-        ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
-    LEFT JOIN {{ ref('dim_centre') }} c 
-        ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
+    LEFT JOIN {{ ref('dim_regions') }} r ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
+    LEFT JOIN {{ ref('dim_centre') }} c ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
 
     UNION ALL SELECT r.region_id, c.succursales_id, o."annee", '06', o."juin_ca", o."juin_vo"
     FROM {{ ref('stg_vtiger_objectifsuccursalecf') }} o
-    LEFT JOIN {{ ref('dim_regions') }} r 
-        ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
-    LEFT JOIN {{ ref('dim_centre') }} c 
-        ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
+    LEFT JOIN {{ ref('dim_regions') }} r ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
+    LEFT JOIN {{ ref('dim_centre') }} c ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
 
     UNION ALL SELECT r.region_id, c.succursales_id, o."annee", '07', o."juillet_ca", o."juillet_vo"
     FROM {{ ref('stg_vtiger_objectifsuccursalecf') }} o
-    LEFT JOIN {{ ref('dim_regions') }} r 
-        ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
-    LEFT JOIN {{ ref('dim_centre') }} c 
-        ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
+    LEFT JOIN {{ ref('dim_regions') }} r ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
+    LEFT JOIN {{ ref('dim_centre') }} c ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
 
     UNION ALL SELECT r.region_id, c.succursales_id, o."annee", '08', o."aout_ca", o."aout_vo"
     FROM {{ ref('stg_vtiger_objectifsuccursalecf') }} o
-    LEFT JOIN {{ ref('dim_regions') }} r 
-        ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
-    LEFT JOIN {{ ref('dim_centre') }} c 
-        ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
+    LEFT JOIN {{ ref('dim_regions') }} r ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
+    LEFT JOIN {{ ref('dim_centre') }} c ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
 
     UNION ALL SELECT r.region_id, c.succursales_id, o."annee", '09', o."septembre_ca", o."septembre_vo"
     FROM {{ ref('stg_vtiger_objectifsuccursalecf') }} o
-    LEFT JOIN {{ ref('dim_regions') }} r 
-        ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
-    LEFT JOIN {{ ref('dim_centre') }} c 
-        ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
+    LEFT JOIN {{ ref('dim_regions') }} r ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
+    LEFT JOIN {{ ref('dim_centre') }} c ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
 
     UNION ALL SELECT r.region_id, c.succursales_id, o."annee", '10', o."octobre_ca", o."octobre_vo"
     FROM {{ ref('stg_vtiger_objectifsuccursalecf') }} o
-    LEFT JOIN {{ ref('dim_regions') }} r 
-        ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
-    LEFT JOIN {{ ref('dim_centre') }} c 
-        ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
+    LEFT JOIN {{ ref('dim_regions') }} r ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
+    LEFT JOIN {{ ref('dim_centre') }} c ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
 
     UNION ALL SELECT r.region_id, c.succursales_id, o."annee", '11', o."novembre_ca", o."novembre_vo"
     FROM {{ ref('stg_vtiger_objectifsuccursalecf') }} o
-    LEFT JOIN {{ ref('dim_regions') }} r 
-        ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
-    LEFT JOIN {{ ref('dim_centre') }} c 
-        ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
+    LEFT JOIN {{ ref('dim_regions') }} r ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
+    LEFT JOIN {{ ref('dim_centre') }} c ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
 
     UNION ALL SELECT r.region_id, c.succursales_id, o."annee", '12', o."decembre_ca", o."decembre_vo"
     FROM {{ ref('stg_vtiger_objectifsuccursalecf') }} o
-    LEFT JOIN {{ ref('dim_regions') }} r 
-        ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
-    LEFT JOIN {{ ref('dim_centre') }} c 
-        ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
+    LEFT JOIN {{ ref('dim_regions') }} r ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
+    LEFT JOIN {{ ref('dim_centre') }} c ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
 ),
 
--- 3️⃣ Agrégation finale des objectifs
+-- 3️⃣ AGRÉGATION des objectifs
 objectifs AS (
     SELECT
         region_id,
         centre_id,
         "annee",
+        mois,
         SUM(objectif_montant) AS objectif_montant,
         SUM(objectif_quantite) AS objectif_quantite
     FROM objectifs_unpivot
-    GROUP BY region_id, centre_id, annee, mois
+    GROUP BY region_id, centre_id, "annee", mois
 ),
 
--- 4️⃣ Comparaison Réalisation vs Objectif
+-- 4️⃣ COMPARAISON RÉALISATION VS OBJECTIF
 comparaison AS (
     SELECT
         v.region_id,
@@ -145,6 +117,7 @@ comparaison AS (
         ON v.region_id = o.region_id
         AND v.succursales_id = o.centre_id
         AND v.annee = o."annee"
+        AND v.mois = o.mois
 )
 
-SELECT * FROM comparaison;
+SELECT * FROM comparaison
