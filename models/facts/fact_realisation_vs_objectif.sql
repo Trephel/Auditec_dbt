@@ -23,7 +23,7 @@ WITH ventes AS (
 
 -- 2️⃣ OBJECTIFS : unpivot des mois
 objectifs_unpivot AS (
-    SELECT r.region_id, c.succursales_id AS centre_id, o."annee", '01' AS mois, o."janvier_ca" AS objectif_montant, o."janvier_vo" AS objectif_quantite
+    SELECT r.region_id, c.succursales_id AS succursales_id, o."annee", '01' AS mois, o."janvier_ca" AS objectif_montant, o."janvier_vo" AS objectif_quantite
     FROM {{ ref('stg_vtiger_objectifsuccursalecf') }} o
     LEFT JOIN {{ ref('dim_regions') }} r ON initcap(trim(o."sujet")) = initcap(trim(r.nom_region))
     LEFT JOIN {{ ref('dim_centre') }} c ON initcap(trim(o."sujet")) = initcap(trim(c.nom_succursales))
@@ -88,13 +88,13 @@ objectifs_unpivot AS (
 objectifs AS (
     SELECT
         region_id,
-        centre_id,
+        succursales_id,
         "annee",
         mois,
         SUM(objectif_montant) AS objectif_montant,
         SUM(objectif_quantite) AS objectif_quantite
     FROM objectifs_unpivot
-    GROUP BY region_id, centre_id, "annee", mois
+    GROUP BY region_id, succursales_id, "annee", mois
 ),
 
 -- 4️⃣ COMPARAISON RÉALISATION VS OBJECTIF
@@ -115,7 +115,7 @@ comparaison AS (
     FROM ventes v
     LEFT JOIN objectifs o
         ON v.region_id = o.region_id
-        AND v.succursales_id = o.centre_id
+        AND v.succursales_id = o.succursales_id
         AND v.annee = o."annee"
         AND v.mois = o.mois
 )
